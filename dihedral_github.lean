@@ -35,11 +35,19 @@ variables {x : dihedral_group n}
 
 namespace dihedral_github
 
+/--
+No reflection is central (if the group is non-degenerate).
+`i` is any `zmod n`.
+-/
 lemma sr_not_mem_center [fact (n > 2)] (i : zmod n): ∃ x, sr i * x ≠ x * r i :=
   begin
     use (r 1),
   end
 
+/--
+Rotations with order greater than 2 are not central.
+`i` is any `zmod n` term satisfying `2 * i ≠ 0`.
+-/
 theorem r_not_mem_center (i : zmod n): 2 * i ≠ 0 → ∃ x, r i * x ≠ x * r i :=
   begin
     intro h,
@@ -53,6 +61,10 @@ theorem r_not_mem_center (i : zmod n): 2 * i ≠ 0 → ∃ x, r i * x ≠ x * r 
     rwa [eq_comm, ← sub_eq_zero, sub_neg_eq_add, ← two_mul],
   end
 
+/--
+Rotations with order at most 2 commute with all rotations.
+`i` is any `zmod n` term satisfying `2 * i = 0`.
+-/
 theorem r_mem_center_r (i : zmod n): 2 * i = 0 → ∀ (j : zmod n), r i * r j = r j * r i :=
   begin
     intros h j,
@@ -64,6 +76,10 @@ theorem r_mem_center_r (i : zmod n): 2 * i = 0 → ∀ (j : zmod n), r i * r j =
     ring,
   end
 
+/--
+Rotations with order at most 2 commute with all reflections.
+`i` is any `zmod n` term satisfying `2 * i = 0`.
+-/
 theorem r_mem_center_sr (i : zmod n): 2 * i = 0 → ∀ (j : zmod n), r i * sr j = sr j * r i :=
   begin
     intros h j,
