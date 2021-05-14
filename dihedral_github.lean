@@ -1,7 +1,7 @@
 /-
 Copyright (c) 2021 Alexander Griffin. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
-Author: Alexnder Griffin.
+Author: Alexander Griffin.
 -/
 import group_theory.specific_groups.dihedral
 
