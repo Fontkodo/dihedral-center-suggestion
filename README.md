@@ -3,6 +3,8 @@ Some proofs that determine which elements can and cannot be in the center of a (
 
 To see how dihedral groups are implemented in Lean, see [their mathlib file][mathlib:dg].
 
+The intent is that these will be added to the dihedral group file.
+
 There are four results that are to be included:
 
 - `sr_not_mem_center`: No reflection is central (if the group is non-degenerate).
